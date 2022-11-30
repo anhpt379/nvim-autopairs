@@ -32,8 +32,8 @@ local function setup(opt)
     -- stylua: ignore
     local rules = {
         Rule("<!--", "-->", 'html'):with_cr(cond.none()),
-        Rule("```", "```", { 'markdown', 'vimwiki', 'rmarkdown', 'rmd', 'pandoc' }),
-        Rule("```.*$", "```", { 'markdown', 'vimwiki', 'rmarkdown', 'rmd', 'pandoc' })
+        Rule("```", "```", { 'markdown', 'vimwiki', 'rmarkdown', 'rmd', 'pandoc', 'gitcommit' }),
+        Rule("```.*$", "```", { 'markdown', 'vimwiki', 'rmarkdown', 'rmd', 'pandoc', 'gitcommit' })
             :only_cr()
             :use_regex(true),
         Rule('"""', '"""', { 'python', 'elixir', 'julia', 'kotlin' })
