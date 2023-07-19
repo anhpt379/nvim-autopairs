@@ -32,7 +32,6 @@ local function bracket_creator(opt)
 end
 
 local function setup(opt)
-    -- stylua: ignore
     local quote = quote_creator(opt)
     local bracket = bracket_creator(opt)
     local rules = {

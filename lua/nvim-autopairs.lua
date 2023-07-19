@@ -17,7 +17,7 @@ local default = {
     map_c_w = false,
     map_cr = true,
     disable_filetype = { 'TelescopePrompt', 'spectre_panel' },
-    disable_in_macro = false,
+    disable_in_macro = true,
     disable_in_visualblock = false,
     disable_in_replace_mode = true,
     ignored_next_char = [=[[%w%%%'%[%"%.%`%$]]=],
@@ -321,7 +321,7 @@ M.on_attach = function(bufnr)
             bufnr,
             "i",
             utils.key.c_h,
-            string.format("v:lua.MPairs.autopairs_c_h(%d)", bufnr),
+            'v:lua.MPairs.autopairs_c_h()',
             { expr = true, noremap = true }
         )
     end
@@ -331,7 +331,7 @@ M.on_attach = function(bufnr)
             bufnr,
             'i',
             '<c-w>',
-            string.format('v:lua.MPairs.autopairs_c_w(%d)', bufnr),
+            'v:lua.MPairs.autopairs_c_w()',
             { expr = true, noremap = true }
         )
     end
